@@ -3,7 +3,8 @@ import { styled, Drawer, Theme, List, IconButton, Divider } from "@mui/material"
 import { MenuBookOutlined,
     CalendarMonthOutlined, 
     ChevronLeftOutlined,
-    AssessmentOutlined } from "@mui/icons-material";
+    AssessmentOutlined,
+    SettingsOutlined } from "@mui/icons-material";
 
 import SidebarElement from "./SidebarElement";
 import Header from "./Header";
@@ -16,6 +17,7 @@ const sidebarTabs: TabOption[] = [
   {label: "Library", icon: MenuBookOutlined},
   {label: "Logs", icon: CalendarMonthOutlined},
   {label: "Statistics", icon: AssessmentOutlined},
+  {label: "Settings", icon: SettingsOutlined},
 ]
 
 const openedMixin = (theme: Theme) => ({

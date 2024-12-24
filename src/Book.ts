@@ -1,8 +1,8 @@
 export type Book = {
   title: string,
   author: string[] | string
-  status: Status | null
-  pages: number | null
+  status?: Status
+  pages?: number
 }
 
 export enum ReadingStatus {
@@ -14,5 +14,5 @@ export enum ReadingStatus {
 
 type Status = {
   readingStatus: ReadingStatus,
-  currentPage: number | null
+  currentPage?: number
 }

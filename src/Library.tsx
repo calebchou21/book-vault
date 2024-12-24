@@ -16,12 +16,19 @@ import { useTheme } from "@mui/material/styles";
 
 export default function Library() {
   const theme = useTheme();
-  const bookIconColors = [
-    theme.palette.bookIconColors.color1,
-    theme.palette.bookIconColors.color2,
-    theme.palette.bookIconColors.color3,
-    theme.palette.bookIconColors.color4,
-  ];
+  console.log(theme.palette.currentlyReading)
+  const getIconColor = (bookStatus: Status | undefined) => {
+    switch (bookStatus) {
+      case Status.Completed:
+        return theme.palette.completed;
+      case Status.CurrentlyReading:
+        return theme.palette.currentlyReading;
+      case Status.Abandoned:
+        return theme.palette.abandoned;
+      default:
+        return theme.palette.grey[500];
+    }
+  }
 
   const books: Book[] = [
     {
@@ -73,7 +80,7 @@ export default function Library() {
             >
               <BookIcon
                 sx={{
-                  color: bookIconColors[index % bookIconColors.length],
+                  color: theme.palette.currentlyReading.main,
                   fontSize: "32px",
                 }}
               />

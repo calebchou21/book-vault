@@ -2,20 +2,27 @@ import { createTheme, Theme } from "@mui/material";
 
 declare module "@mui/material/styles" {
   interface Palette {
-    bookIconColors: {
-      color1: string;
-      color2: string;
-      color3: string;
-      color4: string;
-    };
+    currentlyReading: {
+      main: string;
+    },
+    completed: {
+      main: string;
+    },
+    abandoned: {
+      main: string
+    }
   }
+
   interface PaletteOptions {
-    bookIconColors?: {
-      color1: string;
-      color2: string;
-      color3: string;
-      color4: string;
-    };
+    currentlyReading?: {
+      main: string;
+    },
+    completed?: {
+      main: string;
+    },
+    abandoned?: {
+      main: string
+    }
   }
 }
 
@@ -31,15 +38,19 @@ export const lightTheme: Theme = createTheme({
       contrastText: "#fff",
     },
     background: {
-      default: "#FFF8DE",
+      default: "#FAEED1",
       paper: "#FFF",
     },
-    bookIconColors: {
-      color1: "#FF6347",
-      color2: "#32CD32",
-      color3: "#FFD700",
-      color4: "#FF1493",
+    // Custom colors for book icon coloring
+    currentlyReading: {
+      main: "#FFC300",
     },
+    completed: {
+      main: "#50C878",
+    },
+    abandoned: {
+      main: "#A52A2A"
+    }
   },
   typography: {
     fontFamily: 'Lora, "Times New Roman", Times, serif',
@@ -51,6 +62,14 @@ export const lightTheme: Theme = createTheme({
         disableRipple: true,
       },
     },
+    MuiPaper: {
+      defaultProps: {
+        style: {
+          boxShadow: 'none',
+          borderRadius: '3px', 
+        }
+      }
+    }
   },
 });
 
@@ -68,12 +87,6 @@ export const darkTheme = createTheme(lightTheme, {
     background: {
       default: "#121212",
       paper: "#1E1E1E",
-    },
-    bookIconColors: {
-      color1: "#FF6347",
-      color2: "#32CD32",
-      color3: "#FFD700",
-      color4: "#FF1493",
-    },
+    }
   },
 });

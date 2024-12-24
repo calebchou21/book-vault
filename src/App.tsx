@@ -8,7 +8,7 @@ import Content from './Content';
 import usePreferredColorScheme from './hooks/usePreferedColorScheme';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<string>("Home");
+  const [activeTab, setActiveTab] = useState<string>("Library");
   const preferredTheme = usePreferredColorScheme();
   const theme = preferredTheme === 'dark' ? darkTheme : lightTheme;
 

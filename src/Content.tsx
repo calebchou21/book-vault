@@ -1,6 +1,7 @@
-import { Box, Typography } from "@mui/material"
+import { Box } from "@mui/material"
 import { DrawerHeader } from "./Sidebar/Sidebar"
 import Settings from "./Settings"
+import Library from "./Library"
 
 interface ContentProps {
   activeTab: string
@@ -9,6 +10,8 @@ interface ContentProps {
 export default function Content({activeTab}: ContentProps) {
   const renderContent = () => {
     switch (activeTab) {
+      case "Library":
+        return <Library />
       case "Settings":
         return <Settings />
     }
